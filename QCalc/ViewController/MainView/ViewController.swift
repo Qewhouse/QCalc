@@ -8,12 +8,23 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    //MARK: Properties
+    var service: CalcManager?
 
+    //MARK: LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        service = CalcManager(displayView: self)
         view.backgroundColor = .systemOrange
+      
     }
 
+    //MARK: Methods
+    private func updateDisplay(text: String) {
+        print(text)
+    }
 
 }
 

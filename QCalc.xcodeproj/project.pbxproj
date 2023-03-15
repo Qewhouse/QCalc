@@ -12,6 +12,8 @@
 		37A7181929C267B9001EE41E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A7181829C267B9001EE41E /* ViewController.swift */; };
 		37A7181E29C267BA001EE41E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37A7181D29C267BA001EE41E /* Assets.xcassets */; };
 		37A7182129C267BA001EE41E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37A7181F29C267BA001EE41E /* LaunchScreen.storyboard */; };
+		37A7182E29C2739D001EE41E /* CaclManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A7182D29C2739D001EE41E /* CaclManager.swift */; };
+		37A7183029C27453001EE41E /* Operations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A7182F29C27453001EE41E /* Operations.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		37A7181D29C267BA001EE41E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		37A7182029C267BA001EE41E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		37A7182229C267BA001EE41E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		37A7182D29C2739D001EE41E /* CaclManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaclManager.swift; sourceTree = "<group>"; };
+		37A7182F29C27453001EE41E /* Operations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operations.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +58,48 @@
 		37A7181329C267B9001EE41E /* QCalc */ = {
 			isa = PBXGroup;
 			children = (
-				37A7181429C267B9001EE41E /* AppDelegate.swift */,
-				37A7181629C267B9001EE41E /* SceneDelegate.swift */,
-				37A7181829C267B9001EE41E /* ViewController.swift */,
-				37A7181D29C267BA001EE41E /* Assets.xcassets */,
-				37A7181F29C267BA001EE41E /* LaunchScreen.storyboard */,
-				37A7182229C267BA001EE41E /* Info.plist */,
+				37A7182929C271F1001EE41E /* Model */,
+				37A7182829C271EA001EE41E /* ViewController */,
+				37A7182B29C27228001EE41E /* App */,
 			);
 			path = QCalc;
+			sourceTree = "<group>";
+		};
+		37A7182829C271EA001EE41E /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				37A7182C29C272FB001EE41E /* MainView */,
+				37A7181F29C267BA001EE41E /* LaunchScreen.storyboard */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		37A7182929C271F1001EE41E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				37A7182D29C2739D001EE41E /* CaclManager.swift */,
+				37A7182F29C27453001EE41E /* Operations.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		37A7182B29C27228001EE41E /* App */ = {
+			isa = PBXGroup;
+			children = (
+				37A7181429C267B9001EE41E /* AppDelegate.swift */,
+				37A7181629C267B9001EE41E /* SceneDelegate.swift */,
+				37A7181D29C267BA001EE41E /* Assets.xcassets */,
+				37A7182229C267BA001EE41E /* Info.plist */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		37A7182C29C272FB001EE41E /* MainView */ = {
+			isa = PBXGroup;
+			children = (
+				37A7181829C267B9001EE41E /* ViewController.swift */,
+			);
+			path = MainView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,7 +174,9 @@
 			files = (
 				37A7181929C267B9001EE41E /* ViewController.swift in Sources */,
 				37A7181529C267B9001EE41E /* AppDelegate.swift in Sources */,
+				37A7182E29C2739D001EE41E /* CaclManager.swift in Sources */,
 				37A7181729C267B9001EE41E /* SceneDelegate.swift in Sources */,
+				37A7183029C27453001EE41E /* Operations.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,7 +317,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2JBA92AKK9;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = QCalc/Info.plist;
+				INFOPLIST_FILE = QCalc/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
@@ -308,7 +348,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2JBA92AKK9;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = QCalc/Info.plist;
+				INFOPLIST_FILE = QCalc/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
