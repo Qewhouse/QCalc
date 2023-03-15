@@ -10,7 +10,6 @@
 		37A7181529C267B9001EE41E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A7181429C267B9001EE41E /* AppDelegate.swift */; };
 		37A7181729C267B9001EE41E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A7181629C267B9001EE41E /* SceneDelegate.swift */; };
 		37A7181929C267B9001EE41E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A7181829C267B9001EE41E /* ViewController.swift */; };
-		37A7181C29C267B9001EE41E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37A7181A29C267B9001EE41E /* Main.storyboard */; };
 		37A7181E29C267BA001EE41E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37A7181D29C267BA001EE41E /* Assets.xcassets */; };
 		37A7182129C267BA001EE41E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37A7181F29C267BA001EE41E /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -20,7 +19,6 @@
 		37A7181429C267B9001EE41E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		37A7181629C267B9001EE41E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		37A7181829C267B9001EE41E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		37A7181B29C267B9001EE41E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		37A7181D29C267BA001EE41E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		37A7182029C267BA001EE41E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		37A7182229C267BA001EE41E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -59,7 +57,6 @@
 				37A7181429C267B9001EE41E /* AppDelegate.swift */,
 				37A7181629C267B9001EE41E /* SceneDelegate.swift */,
 				37A7181829C267B9001EE41E /* ViewController.swift */,
-				37A7181A29C267B9001EE41E /* Main.storyboard */,
 				37A7181D29C267BA001EE41E /* Assets.xcassets */,
 				37A7181F29C267BA001EE41E /* LaunchScreen.storyboard */,
 				37A7182229C267BA001EE41E /* Info.plist */,
@@ -127,7 +124,6 @@
 			files = (
 				37A7182129C267BA001EE41E /* LaunchScreen.storyboard in Resources */,
 				37A7181E29C267BA001EE41E /* Assets.xcassets in Resources */,
-				37A7181C29C267B9001EE41E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,14 +143,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		37A7181A29C267B9001EE41E /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				37A7181B29C267B9001EE41E /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		37A7181F29C267BA001EE41E /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -292,7 +280,7 @@
 				INFOPLIST_FILE = QCalc/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -302,6 +290,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.qewhouse.QCalc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -320,7 +311,7 @@
 				INFOPLIST_FILE = QCalc/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -330,6 +321,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.qewhouse.QCalc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
