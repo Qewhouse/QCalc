@@ -18,14 +18,18 @@ class ViewController: UIViewController {
     var service: CalcManager?
 
     //MARK: LifeCycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationController?.navigationBar.barStyle = .black
         service = CalcManager(displayView: self)
         view.backgroundColor = Appcolor.background
       
         configureAppearance()
     }
+    
+
 
     //MARK: Methods
     func updateDisplay(text: String) {
@@ -93,6 +97,9 @@ private extension ViewController {
         display.text = "0"
         display.textColor = .white
         display.font = UIFont.boldSystemFont(ofSize: 80)
+        display.isEnabled = false
+        display.adjustsFontSizeToFitWidth = true
+        display.minimumFontSize = 30
         display.backgroundColor = .clear
         
         displayView.addSubview(display)
