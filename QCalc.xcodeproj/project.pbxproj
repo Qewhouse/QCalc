@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		374A4B8429C4DFDF00727EA8 /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374A4B8329C4DFDF00727EA8 /* AppColor.swift */; };
 		37A7181529C267B9001EE41E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A7181429C267B9001EE41E /* AppDelegate.swift */; };
 		37A7181729C267B9001EE41E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A7181629C267B9001EE41E /* SceneDelegate.swift */; };
 		37A7181929C267B9001EE41E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A7181829C267B9001EE41E /* ViewController.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		374A4B8329C4DFDF00727EA8 /* AppColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
 		37A7181129C267B9001EE41E /* QCalc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QCalc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37A7181429C267B9001EE41E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		37A7181629C267B9001EE41E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 				37A7182D29C2739D001EE41E /* CaclManager.swift */,
 				37A7182F29C27453001EE41E /* Operations.swift */,
 				37A7183129C2901F001EE41E /* Constants.swift */,
+				374A4B8329C4DFDF00727EA8 /* AppColor.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -178,6 +181,7 @@
 				37A7181929C267B9001EE41E /* ViewController.swift in Sources */,
 				37A7181529C267B9001EE41E /* AppDelegate.swift in Sources */,
 				37A7182E29C2739D001EE41E /* CaclManager.swift in Sources */,
+				374A4B8429C4DFDF00727EA8 /* AppColor.swift in Sources */,
 				37A7181729C267B9001EE41E /* SceneDelegate.swift in Sources */,
 				37A7183029C27453001EE41E /* Operations.swift in Sources */,
 				37A7183229C2901F001EE41E /* Constants.swift in Sources */,

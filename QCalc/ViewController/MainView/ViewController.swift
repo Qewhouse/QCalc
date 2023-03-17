@@ -22,23 +22,46 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         service = CalcManager(displayView: self)
-        view.backgroundColor = .systemOrange
+        view.backgroundColor = Appcolor.background
       
         configureAppearance()
     }
 
     //MARK: Methods
-    private func updateDisplay(text: String) {
+    func updateDisplay(text: String) {
         DispatchQueue.main.async {
             self.display.text = text
         }
     }
     
     @objc func buttonPrssed(_ sender: UIButton) {
-        print(sender.tag)
+        switch sender.tag {
+        case 0...9:
+            service?.numberAction(number: sender.tag)
+        case 10:
+            service?.dot()
+        case 11:
+            service?.makeResult()
+        case 12:
+            service?.addition()
+        case 13:
+            service?.substraction()
+        case 14:
+            service?.multiplication()
+        case 15:
+            service?.acAction()
+        case 16:
+            service?.changeSign()
+        case 17:
+            service?.percent()
+        case 18:
+            service?.division()
+        default:
+            break
+        }
     }
-
 }
+
 //MARK: View Controller private Methods
 private extension ViewController {
     func configureAppearance() {
@@ -50,7 +73,7 @@ private extension ViewController {
     func setupMainVStack() {
         mainVStack.axis = .vertical
         mainVStack.frame = CGRect(x: 0, y: 60, width: Constants.screenWidth, height: Constants.screenHeight - 60)
-        mainVStack.backgroundColor = .cyan
+        mainVStack.backgroundColor = .clear
         self.view.addSubview(mainVStack)
     }
     
@@ -59,7 +82,7 @@ private extension ViewController {
                                    y: 0,
                                    width: Constants.screenWidth,
                                    height: Constants.screenHeight - (82 * 5) - 60 - 30)
-        displayView.backgroundColor = .darkGray
+        displayView.backgroundColor = .clear
         
         display.frame = CGRect(x: 15,
                                y: 15,
@@ -70,58 +93,132 @@ private extension ViewController {
         display.text = "0"
         display.textColor = .white
         display.font = UIFont.boldSystemFont(ofSize: 80)
-        display.backgroundColor = .green
+        display.backgroundColor = .clear
         
         displayView.addSubview(display)
         mainVStack.addSubview(displayView)
     }
     func setupLine1() {
         let line1 = createHStack(yPosition: Int(displayView.frame.height) + 0)
+       
         let acButton = createButton(order: 0, title: "AC", tag: 15)
         acButton.addTarget(self, action: #selector(buttonPrssed(_:)), for: .touchUpInside)
+        acButton.backgroundColor = Appcolor.topButtons
+        acButton.setTitleColor(.black, for: .normal)
         line1.addSubview(acButton)
-        line1.addSubview(createButton(order: 1, title: "+/-", tag: 16))
-        line1.addSubview(createButton(order: 2, title: "%", tag: 17))
-        line1.addSubview(createButton(order: 3, title: "/", tag: 18))
+       
+        let changeSignButton = createButton(order: 1, title: "+/-", tag: 16)
+        changeSignButton.addTarget(self, action: #selector(buttonPrssed(_:)), for: .touchUpInside)
+        changeSignButton.backgroundColor = Appcolor.topButtons
+        changeSignButton.setTitleColor(.black, for: .normal)
+        line1.addSubview(changeSignButton)
+        
+        let percentButton = createButton(order: 2, title: "%", tag: 17)
+        percentButton.addTarget(self, action: #selector(buttonPrssed(_:)), for: .touchUpInside)
+        percentButton.backgroundColor = Appcolor.topButtons
+        percentButton.setTitleColor(.black, for: .normal)
+        line1.addSubview(percentButton)
+        
+        let divideButton = createButton(order: 3, title: "/", tag: 18)
+        divideButton.addTarget(self, action: #selector(buttonPrssed(_:)), for: .touchUpInside)
+        divideButton.backgroundColor = Appcolor.actions
+        divideButton.setTitleColor(.black, for: .normal)
+        line1.addSubview(divideButton)
+        
         mainVStack.addSubview(line1)
     }
     
     func setupLine2() {
         let line2 = createHStack(yPosition: Int(displayView.frame.height) + 80 + 2)
-        line2.addSubview(createButton(order: 0, title: "7", tag: 4))
-        line2.addSubview(createButton(order: 1, title: "8", tag: 5))
-        line2.addSubview(createButton(order: 2, title: "9", tag: 6))
-        line2.addSubview(createButton(order: 3, title: "*", tag: 7))
+        
+        let sevenButton = createButton(order: 0, title: "7", tag: 7)
+        sevenButton.addTarget(self, action: #selector(buttonPrssed(_:)), for: .touchUpInside)
+        line2.addSubview(sevenButton)
+        
+        let eightButton = createButton(order: 1, title: "8", tag: 8)
+        eightButton.addTarget(self, action: #selector(buttonPrssed(_:)), for: .touchUpInside)
+        line2.addSubview(eightButton)
+        
+        let nineButton = createButton(order: 2, title: "9", tag: 9)
+        nineButton.addTarget(self, action: #selector(buttonPrssed(_:)), for: .touchUpInside)
+        line2.addSubview(nineButton)
+        
+        let multiplyButton = createButton(order: 3, title: "*", tag: 14)
+        multiplyButton.addTarget(self, action: #selector(buttonPrssed(_:)), for: .touchUpInside)
+        multiplyButton.backgroundColor = Appcolor.actions
+        multiplyButton.setTitleColor(.black, for: .normal)
+        line2.addSubview(multiplyButton)
+        
         mainVStack.addSubview(line2)
     }
     
     
     func setupLine3() {
         let line3 = createHStack(yPosition: Int(displayView.frame.height) + 80 + 80 + 4)
-        line3.addSubview(createButton(order: 0, title: "4", tag: 8))
-        line3.addSubview(createButton(order: 1, title: "5", tag: 9))
-        line3.addSubview(createButton(order: 2, title: "6", tag: 10))
-        line3.addSubview(createButton(order: 3, title: "-", tag: 11))
+        
+        let fourButton = createButton(order: 0, title: "4", tag: 4)
+        fourButton.addTarget(self, action: #selector(buttonPrssed(_:)), for: .touchUpInside)
+        line3.addSubview(fourButton)
+        
+        let fiveButton = createButton(order: 1, title: "5", tag: 5)
+        fiveButton.addTarget(self, action: #selector(buttonPrssed(_:)), for: .touchUpInside)
+        line3.addSubview(fiveButton)
+        
+        let sixButton = createButton(order: 2, title: "6", tag: 6)
+        sixButton.addTarget(self, action: #selector(buttonPrssed(_:)), for: .touchUpInside)
+        line3.addSubview(sixButton)
+        
+        let substractButton = createButton(order: 3, title: "-", tag: 13)
+        substractButton.addTarget(self, action: #selector(buttonPrssed(_:)), for: .touchUpInside)
+        substractButton.backgroundColor = Appcolor.actions
+        substractButton.setTitleColor(.black, for: .normal)
+        line3.addSubview(substractButton)
+        
         mainVStack.addSubview(line3)
     }
     
     func setupLine4() {
         let line4 = createHStack(yPosition: Int(displayView.frame.height) + 80 + 80 + 80 + 6)
-        line4.addSubview(createButton(order: 0, title: "1", tag: 12))
-        line4.addSubview(createButton(order: 1, title: "2", tag: 13))
-        line4.addSubview(createButton(order: 2, title: "3", tag: 14))
-        line4.addSubview(createButton(order: 3, title: "+", tag: 15))
+        
+        let oneButton = createButton(order: 0, title: "1", tag: 1)
+        oneButton.addTarget(self, action: #selector(buttonPrssed(_:)), for: .touchUpInside)
+        line4.addSubview(oneButton)
+        
+        let twoButton = createButton(order: 1, title: "2", tag: 2)
+        twoButton.addTarget(self, action: #selector(buttonPrssed(_:)), for: .touchUpInside)
+        line4.addSubview(twoButton)
+        
+        let threeButton = createButton(order: 2, title: "3", tag: 3)
+        threeButton.addTarget(self, action: #selector(buttonPrssed(_:)), for: .touchUpInside)
+        line4.addSubview(threeButton)
+        
+        let addButton = createButton(order: 3, title: "+", tag: 12)
+        addButton.addTarget(self, action: #selector(buttonPrssed(_:)), for: .touchUpInside)
+        addButton.backgroundColor = Appcolor.actions
+        addButton.setTitleColor(.black, for: .normal)
+        line4.addSubview(addButton)
+        
         mainVStack.addSubview(line4)
     }
     
     func setupLine5() {
         let line5 = createHStack(yPosition: Int(displayView.frame.height) + 80 + 80 + 80 + 80 + 8)
-        let zeroButton = createButton(order: 0, title: "0", tag: 16)
+        
+        let zeroButton = createButton(order: 0, title: "0", tag: 0)
         zeroButton.frame = CGRect(x: 2, y: 0, width: Int(Constants.screenWidth / 4) * 2 - 2, height: 80)
+        zeroButton.addTarget(self, action: #selector(buttonPrssed(_:)), for: .touchUpInside)
         line5.addSubview(zeroButton)
         
-        line5.addSubview(createButton(order: 2, title: ".", tag: 18))
-        line5.addSubview(createButton(order: 3, title: "=", tag: 19))
+        let dotButton = createButton(order: 2, title: ".", tag: 10)
+        dotButton.addTarget(self, action: #selector(buttonPrssed(_:)), for: .touchUpInside)
+        line5.addSubview(dotButton)
+        
+        let equalButton = createButton(order: 3, title: "=", tag: 11)
+        equalButton.addTarget(self, action: #selector(buttonPrssed(_:)), for: .touchUpInside)
+        equalButton.backgroundColor = Appcolor.actions
+        equalButton.setTitleColor(.black, for: .normal)
+        line5.addSubview(equalButton)
+        
         mainVStack.addSubview(line5)
     }
     
@@ -139,7 +236,7 @@ setupLine1()
                                             width: Int(Constants.screenWidth) / 4 - 2,
                                             height: 80))
         button.setTitle(title, for: .normal)
-        button.backgroundColor = .brown
+        button.backgroundColor = Appcolor.buttons
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 30)
         button.setTitleColor(.white, for: .normal)
         button.layer.cornerRadius = 15
