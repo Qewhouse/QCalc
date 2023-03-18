@@ -238,9 +238,9 @@ setupLine1()
     }
     
     func createButton(order: Int, title: String, tag: Int) -> UIButton {
-        let button = UIButton(frame: CGRect(x: (0 + Int(Constants.screenWidth / 4) * order + 1), // #warning ("in tutorial + 2")
+        let button = UIButton(frame: CGRect(x: (0 + Int(Constants.screenWidth / 4) * order + 3), // #warning ("in tutorial + 2")
                                             y: 0,
-                                            width: Int(Constants.screenWidth) / 4 - 2,
+                                            width: Int(Constants.screenWidth) / 4 - 4,
                                             height: 80))
         button.setTitle(title, for: .normal)
         button.backgroundColor = Appcolor.buttons
